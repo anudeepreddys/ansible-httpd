@@ -1,6 +1,6 @@
 ---
 - name: httpd installation
   hosts: all
-  become_user: ec2-user
+  remote_user: ec2-user
   roles:
     - apache
