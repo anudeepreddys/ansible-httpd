@@ -1,0 +1,6 @@
+---
+- name: httpd installation
+  hosts: all
+  become: true
+  roles:
+    - APACHE
