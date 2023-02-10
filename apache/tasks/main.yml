@@ -4,22 +4,22 @@
   ansible.builtin.yum:
     name: httpd
     state: latest
-#- name: custom index.html
-#  ansible.builtin.copy:
-#    dest: /var/www/"{{ html_folder }}"/index.html
-#    content: "Custom Web Page"
-#- name: Copy file with owner and permissions
-#  ansible.builtin.copy:
-#    src: /files/foo.conf
-#    dest: /foo.conf
-#- name: httpd service enabled
-#  ansible.builtin.service:
-#    name: httpd
-#    enabled: true
-#    state: started
-#- name: open "{{ firewall_name }}"
-#  ansible.posix.firewalld:
-#    service: http
-#    state: enabled
-#    immediate: true
-#    permanent: true
+- name: custom index.html
+  ansible.builtin.copy:
+    dest: /var/www/"{{ html_folder }}"/index.html
+    content: "Custom Web Page"
+- name: Copy file with owner and permissions
+  ansible.builtin.copy:
+    src: /files/foo.conf
+    dest: /foo.conf
+- name: httpd service enabled
+  ansible.builtin.service:
+    name: httpd
+    enabled: true
+    state: started
+- name: open "{{ firewall_name }}"
+  ansible.posix.firewalld:
+    service: http
+    state: enabled
+    immediate: true
+    permanent: true
